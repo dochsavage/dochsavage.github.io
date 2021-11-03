@@ -3,6 +3,7 @@
 
 Machine Learning Project, Week#4:
 
-https://dochsavage.github.io/project4.html
+*[HTML Effective Barbell Exercise Detection](https://dochsavage.github.io/project4.html)*
 
-https://dochsavage.github.io/project4.rmd
+*[RMD Effective Barbell Exercise Detection](https://dochsavage.github.io/project4.rmd)*
+
