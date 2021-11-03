@@ -46,7 +46,7 @@ vColSum <- colSums(trainingBB)
 zeroColname <- names(vColSum[vColSum<=1])
 trainingBBfinal <- trainingBB[,!(names(trainingBB) %in% zeroColname)]
 ```
-#### Basic Exploration
+### Basic Exploration
 
 Let's take this training data and use Principal Component Analysis to identify
 the critical variables that we'll need to focus our training on. 
@@ -67,7 +67,7 @@ PCA, there are about 15 major variables, but it is difficult to arbitrarily
 assign a cut-off here.  The tail-off seems fairly smooth, so I'm going to keep
 these remaining variables for training.
 
-#### Split and Train
+### Split and Train
 
 A major objective of this project is being able to not only do prediction on
 the provided "test" data (which has no answer column), but also determine 
@@ -117,7 +117,7 @@ gbm <- train( classe ~ ., data = trainClasse, method="gbm",  preProc=c("center",
 #ada52 <- train( classe ~ ., data = trainingBBc, method="ada",  preProc=c("center","scale"), tuneGrid = ada.grid)
 #lda52 <- train( classe ~ ., data = trainingBBc, method="lda",  preProc=c("center","scale"))
 ```
-#### Predict to determine Out-of-set Accuracy
+### Predict to determine Out-of-set Accuracy
 
 Now, we will take the testing data that we derived from the full Training set and use it to test our models.
 The idea here is to find out how good our out-of-set error is.
@@ -150,7 +150,7 @@ print(accuracyMatrix)
 ```
 The Random Forests definitely has the superior accuracy here, and using ensembling doesn't seem to help here.
 
-#### Predict using Provided Test Data as Validation Set
+### Predict using Provided Test Data as Validation Set
 
 Now, we will take the 3 models and use them to predict values for the given validation data,
 originally labelled "pml-testing'.  
